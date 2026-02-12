@@ -256,9 +256,9 @@ function checkout(){
   let total=0;
 
   cart.forEach(i=>{
-    msg+=`${i.q}x ${i.name}%0A`;
-    total+=i.price*i.q;
-  });
+  msg+= `${i.q}x ${i.nome}%0A`;
+  total+= i.preco * i.q;
+});
 
   msg+=`%0A*Total: R$ ${total.toFixed(2).replace('.',',')}*%0A`;
   msg+=`Nome: ${nome}%0AEndereço: ${endereco}`;
@@ -314,6 +314,7 @@ window.onload=()=>{
 
 </body>
 </html>
+
 
 
 
