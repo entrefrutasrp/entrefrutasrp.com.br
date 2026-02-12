@@ -173,7 +173,7 @@ function addToCart(id){
   if(item){
     item.q+=q;
   } else {
-    cart.push({id:p.id,name:p.name,price:p.price,q});
+    cart.push({id:p.id,nome:p.nome,preco:p.preco,q});
   }
 
   tempQty[id]=1;
@@ -187,12 +187,12 @@ function updateCart(){
   let total=0,count=0;
 
   cart.forEach(i=>{
-    total+=i.price*i.q;
+    total+=i.preco*i.q;
     count+=i.q;
     el.innerHTML+=`
       <div class="flex justify-between">
-        <span>${i.q}x ${i.name}</span>
-        <span>R$ ${(i.price*i.q).toFixed(2).replace('.',',')}</span>
+        <span>${i.q}x ${i.nome}</span>
+        <span>R$ ${(i.preco*i.q).toFixed(2).replace('.',',')}</span>
       </div>`;
   });
 
@@ -281,6 +281,7 @@ window.onload=()=>{
 
 </body>
 </html>
+
 
 
 
