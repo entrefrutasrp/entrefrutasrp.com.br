@@ -41,11 +41,11 @@ body { background:#fdfaf6; }
 <script>
 const products = [
  {id:1,nome:"Geleia de Morango",preco:25,imagem:"imagens/geleia-morango.jpg"},
- {id:2,name:"Geleia de Abacaxi com Pimenta",price:24,img:"🍍"},
- {id:3,name:"Geleia de Frutas Vermelhas",price:28,img:"🍒"},
- {id:2,nome:"Molho de Pimenta (pote 240ml)",preco:25,imagem:"imagens/molho-pimenta-pote.jpg"},
- {id:3,nome:"Molho de Pimenta (bisnaga)",preco:18,imagem:"imagens/molho-pimenta-bisnaga.jpg"},
- {id:4,nome:"Molho Chimichurri",preco:30,imagem:"imagens/molho-chimichurri.jpg"}
+ {id:2,nome:"Geleia de Abacaxi com Pimenta",preco:24,imagem:"imagens/abacaxi.jpg"},
+ {id:3,nome:"Geleia de Frutas Vermelhas",preco:28,imagem:"imagens/frutas-vermelhas.jpg"},
+ {id:4,nome:"Molho de Pimenta (pote 240ml)",preco:25,imagem:"imagens/molho-pimenta-pote.jpg"},
+ {id:5,nome:"Molho de Pimenta (bisnaga)",preco:18,imagem:"imagens/molho-pimenta-bisnaga.jpg"},
+ {id:6,nome:"Molho Chimichurri",preco:30,imagem:"imagens/molho-chimichurri.jpg"}
 ];
 
 let cart = [];
@@ -54,9 +54,13 @@ let tempQty = {};
 products.forEach(p=>{
 document.write(`
 <div class="bg-white rounded-xl p-5 shadow text-center flex flex-col">
-  <div class="text-5xl mb-3">${p.img}</div>
-  <h3 class="font-bold mb-1">${p.name}</h3>
-  <p class="mb-3 font-semibold">R$ ${p.price.toFixed(2).replace('.',',')}</p>
+  <img src="${p.imagem}" alt="${p.nome}" class="w-full h-40 object-cover rounded mb-3">
+
+<h3 class="font-bold mb-1">${p.nome}</h3>
+
+<p class="mb-3 font-semibold">
+  R$ ${p.preco.toFixed(2).replace('.',',')}
+</p>
 
   <div class="flex justify-center items-center gap-3 mb-3">
     <button onclick="changeTemp(${p.id},-1)" class="px-2 border rounded">−</button>
@@ -277,6 +281,7 @@ window.onload=()=>{
 
 </body>
 </html>
+
 
 
 
